@@ -1,0 +1,32 @@
+﻿@model StrictPRGDemo.ViewModels.Home.AddUserVM
+
+@{
+    ViewBag.Title = "Strict PRG";
+}
+<h2>Add a User (Strict PRG)</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+    <div>
+        <div>
+            @Html.LabelFor(x => x.FirstName)
+            @Html.TextBoxFor(x => x.FirstName)
+            @Html.ValidationMessageFor(x => x.FirstName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.LastName)
+            @Html.TextBoxFor(x => x.LastName)
+            @Html.ValidationMessageFor(x => x.LastName)
+        </div>
+        <div>
+            @Html.LabelFor(x => x.DateOfBirth)
+            @Html.EditorFor(x => x.DateOfBirth)
+            @Html.ValidationMessageFor(x => x.DateOfBirth)
+        </div>
+        <div>
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+}
