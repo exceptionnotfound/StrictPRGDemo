@@ -1,14 +1,9 @@
 ﻿@model StrictPRGDemo.ViewModels.Home.AddUserVM
 
-@{
-    ViewBag.Title = "Normal";
-}
 <h2>Add a User (Normal)</h2>
 
 @using(Html.BeginForm())
 {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
     <div>
         <div>
             @Html.LabelFor(x => x.FirstName)

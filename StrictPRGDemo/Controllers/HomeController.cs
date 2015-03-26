@@ -24,7 +24,6 @@ namespace StrictPRGDemo.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Normal(AddUserVM model)
         {
             if(!ModelState.IsValid)
@@ -44,7 +43,6 @@ namespace StrictPRGDemo.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [ExportModelState]
         public ActionResult Strict(AddUserVM model)
         {
